@@ -59,18 +59,21 @@ if prev:
 else:
     main_year = input_dt.year
     main_month = input_dt.month
+    
+print(week_num)
 
-# if week_num == 0:
-#     week_num_status = '마지막'
-# else:
-#     week_num_status = str(week_num)
-week_num_status = str(week_num) if week_num > 0 else '마지막'
+week_num_key = str(week_num) if week_num > 0 else '마지막'
+
+week_num_dict = {
+    '1': '첫째',
+    '2': '둘째',
+    '3': '셋째',
+    '4': '넷째',
+    '5': '다섯째',
+    '마지막': '마지막'
+}
+week_num_status = week_num_dict[week_num_key]
 
 print(input_date)
 week_day_kor = '월화수목금토일'[input_dt.weekday()]
-print(f'{main_year}년 {main_month}월 {week_num_status}주 {week_day_kor}요일')
-
-
-       
-    
-
+print(f'{main_year}년 {main_month}월의 {week_num_status}주 {week_day_kor}요일')
